@@ -14,6 +14,8 @@ GEM
     codependent (0.4)
     coderay (1.1.1)
     diff-lcs (1.3)
+    docile (1.1.5)
+    json (2.0.3)
     method_source (0.8.2)
     mustache (1.0.3)
     parser (2.4.0.0)
@@ -48,6 +50,11 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.8.1)
+    simplecov (0.13.0)
+      docile (~> 1.1.0)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
     slop (3.6.0)
     trollop (2.1.2)
     unicode-display_width (1.1.3)
@@ -63,6 +70,7 @@ DEPENDENCIES
   reading_list!
   rspec (~> 3.0)
   rubocop (~> 0.47.1)
+  simplecov
 
 BUNDLED WITH
    1.14.5
