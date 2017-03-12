@@ -1,5 +1,4 @@
 require 'codependent'
-require 'pry'
 
 module ReadingList
   class IocContainer

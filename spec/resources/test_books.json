@@ -1,0 +1,9 @@
+[
+  {
+    "title": "Test Book",
+    "author": "Test Author",
+    "year": 2017,
+    "amazon_link": "http://www.example.com",
+    "type": "fiction"
+  }
+]
