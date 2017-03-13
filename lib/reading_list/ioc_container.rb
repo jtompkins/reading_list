@@ -37,8 +37,20 @@ module ReadingList
           depends_on :config_file
         end
 
+        singleton :configuration do
+          from_provider do |deps|
+            deps[:configuration_factory].config
+          end
+
+          depends_on :configuration_factory
+        end
+
         singleton :template_factory do
           from_type ReadingList::TemplateFactory
+        end
+
+        singleton :list_writer do
+          from_type ReadingList::ListWriter
         end
 
         instance :book_repository do

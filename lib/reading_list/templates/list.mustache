@@ -1,11 +1,56 @@
-<html>
-  <body>
-    <h1>Reading List</h1>
+<!DOCTYPE html>
 
-    <ul>
-      {{#books}}
-        <li>{{title}} by {{author}}</li>
-      {{/books}}
-    </ul>
+<html lang="en">
+  <head>
+  	<meta charset="utf-8">
+
+  	<title>Reading List - {{name}}</title>
+
+    <link rel="stylesheet" href="styles.css"></link>
+  </head>
+
+  <body>
+    <div class="reading-list">
+      <header class="reading-list__header">
+        <div class="header__hero-image"></div>
+        <div class="header__avatar-image"></div>
+
+        <h1>{{name}}</h1>
+        <h2>Reading List</h2>
+      </header>
+
+      <section class="reading-list__content">
+        <nav class="reading-list__year-list">
+          <ul>
+            {{#years}}
+              <li><a href="#{{.}}">{{.}}</a></li>
+            {{/years}}
+          </ul>
+        </nav>
+
+        {{#sections}}
+          <div class="reading-list__year">
+            <h2><a id="{{year}}">{{year}}</a></h2>
+
+            <ul class="year__book-list">
+              {{#books}}
+                <li class="book-list__book">
+                  <span class="book-list__title">
+                    {{#link}}<a href="{{.}}">{{title}}</a>{{/link}}
+                    {{^link}}{{title}}{{/link}}
+                  </span>
+                  by
+                  <span class="book-list__author">{{author}}</span>
+                </li>
+              {{/books}}
+            </ul>
+          </div>
+        {{/sections}}
+      </section>
+
+      <footer class="reading-list__footer">
+        Created using the <a href="https://github.com/jtompkins/reading_list">Reading List</a> gem.
+      </footer>
+    </div>
   </body>
 </html>

@@ -21,10 +21,11 @@ end
 
 container = ReadingList::IocContainer.new(opts).container
 
-config = container.resolve(:configuration_factory).config
+config = container.resolve(:configuration)
 books = container.resolve(:book_repository).books
 renderer = container.resolve(:list_renderer)
+writer = container.resolve(:list_writer)
 
 output = renderer.render(config, books)
 
-puts output
+writer.write(opts[:output_file], output)
