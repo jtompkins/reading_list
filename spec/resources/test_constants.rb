@@ -1,17 +1,14 @@
 BOOK_HASH = {
-  amazon_link: 'www.amazon.com',
+  link: 'www.example.com',
   author: 'Test Author',
   title: 'Test Title',
-  type: :fiction,
   year: 2017
 }.freeze
 
 CONFIG_HASH = {
-  name: 'Test User',
-  email: 'test@example.com',
-  website: 'www.example.com',
-  referrer_id: 'test_referrer',
-  year: 2017
+  'name' => 'Test User',
+  'email' => 'test@example.com',
+  'website' => 'www.example.com'
 }.freeze
 
 IOC_FILES = {
