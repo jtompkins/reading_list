@@ -2,8 +2,8 @@ require 'codependent'
 
 module ReadingList
   class IocContainer
-    def initialize(files)
-      @files = files
+    def initialize(config_file)
+      @config_file = config_file
     end
 
     def container
@@ -12,20 +12,12 @@ module ReadingList
 
     private
 
-    attr_reader :files
+    attr_reader :config_file
 
     def build_container
-      Codependent::Container.new(files) do |files|
-        singleton :json_file do
-          from_value files[:book_file]
-        end
-
+      Codependent::Container.new(config_file) do |config_file|
         singleton :config_file do
-          from_value files[:config_file]
-        end
-
-        singleton :output_file do
-          from_value files[:output_file]
+          from_value config_file
         end
 
         singleton :book_factory do
@@ -54,8 +46,14 @@ module ReadingList
         end
 
         instance :book_repository do
-          from_type ReadingList::BookRepository
-          depends_on :json_file, :book_factory
+          from_provider do |deps|
+            config = deps[:configuration]
+            book_factory = deps[:book_factory]
+
+            ReadingList::BookRepository.new(config.book_file, book_factory)
+          end
+
+          depends_on :configuration, :book_factory
         end
 
         instance :list_renderer do
