@@ -50,6 +50,7 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.8.1)
+    sass (3.4.23)
     simplecov (0.13.0)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
@@ -70,7 +71,8 @@ DEPENDENCIES
   reading_list!
   rspec (~> 3.0)
   rubocop (~> 0.47.1)
+  sass
   simplecov
 
 BUNDLED WITH
-   1.14.5
+   1.14.6
