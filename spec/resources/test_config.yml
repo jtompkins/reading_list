@@ -1,4 +1,9 @@
-name: Joshua Tompkins
-email: josh@joshtompkins.com
-website: https://www.joshtompkins.com
-referrer_id: test_id
+name: Test Name
+email: test@example.com
+website: https://www.example.com
+
+book_file: spec/resources/test_books.json
+
+output:
+  dir: ~/reading_list_output
+  theme: default

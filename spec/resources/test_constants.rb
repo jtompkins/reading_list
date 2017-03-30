@@ -8,17 +8,18 @@ BOOK_HASH = {
 CONFIG_HASH = {
   'name' => 'Test User',
   'email' => 'test@example.com',
-  'website' => 'www.example.com'
+  'website' => 'https://www.example.com',
+  'book_file' => 'spec/resources/test_books.json',
+  'output' => {
+    'dir' => '~/reading_list_output',
+    'theme' => 'default'
+  }
 }.freeze
 
-IOC_FILES = {
-  book_file: 'test_books.json',
-  config_file: 'test_config.yml',
-  output_file: 'test_output.html'
-}.freeze
+CONFIG_FILE = 'spec/resources/test_config.yml'.freeze
+
+CONFIG = ReadingList::Configuration.new(CONFIG_HASH)
 
 BOOKS = [
   ReadingList::Book.new(BOOK_HASH)
 ].freeze
-
-CONFIG = ReadingList::Configuration.new(CONFIG_HASH)
