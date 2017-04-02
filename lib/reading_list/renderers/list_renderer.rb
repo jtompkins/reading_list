@@ -1,5 +1,4 @@
 require 'mustache'
-require 'pry'
 
 module ReadingList
   class ListRenderer

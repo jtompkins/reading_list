@@ -1,5 +1,3 @@
-require 'pry'
-
 module ReadingList
   class Book
     def initialize(json_hash)
