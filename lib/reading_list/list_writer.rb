@@ -18,8 +18,8 @@ module ReadingList
     end
 
     def copy_style_sheet!(config)
-      theme_file = "./lib/reading_list/resources/themes/bin/#{config.theme}.css"
-      output_file = File.join(config.output_dir, 'style.css')
+      theme_file = "./resources/themes/bin/#{config.theme}.css"
+      output_file = File.join(config.output_dir, 'styles.css')
 
       FileUtils.copy_entry(
         File.expand_path(theme_file, __dir__),
