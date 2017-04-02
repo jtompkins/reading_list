@@ -7,25 +7,10 @@ opts = Trollop.options do
   version "v#{ReadingList::VERSION}"
 
   opt :config_file, 'Path to config file', default: '~/.reading_list.yml'
-  opt :book_file, 'Path to books JSON file', default: '~/books.json'
-  opt :output_file, 'Path to write the output HTML', default: '~/books.html'
 end
 
 unless File.exist?(File.expand_path(opts[:config_file]))
   Trollop.die :config_file, 'must exist'
 end
 
-unless File.exist?(File.expand_path(opts[:book_file]))
-  Trollop.die :book_file, 'must exist'
-end
-
-container = ReadingList::IocContainer.new(opts).container
-
-config = container.resolve(:configuration)
-books = container.resolve(:book_repository).books
-renderer = container.resolve(:list_renderer)
-writer = container.resolve(:list_writer)
-
-output = renderer.render(config, books)
-
-writer.write(opts[:output_file], output)
+ReadingList::App.new(opts[:config_file]).run

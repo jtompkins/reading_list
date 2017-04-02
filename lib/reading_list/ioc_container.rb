@@ -50,7 +50,10 @@ module ReadingList
             config = deps[:configuration]
             book_factory = deps[:book_factory]
 
-            ReadingList::BookRepository.new(config.book_file, book_factory)
+            ReadingList::BookRepository.new(
+              json_file: config.book_file,
+              book_factory: book_factory
+            )
           end
 
           depends_on :configuration, :book_factory
