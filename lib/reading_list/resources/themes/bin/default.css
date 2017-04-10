@@ -118,3 +118,34 @@ a:hover {
 .reading-list__footer a:hover {
   margin-bottom: -1px;
   border-bottom: 1px solid #FBCB3C; }
+
+@media (max-width: 1024px) {
+  .reading-list__content {
+    width: 70%; }
+
+  body {
+    font-size: 14pt; } }
+@media (max-width: 375px) {
+  .header__hero-image {
+    height: 60px; }
+
+  .header__avatar-image {
+    height: 75px;
+    width: 75px;
+    margin-top: -40px; }
+
+  .reading-list__content {
+    width: 80%; }
+
+  .reading-list__year h2 {
+    font-size: 1.25rem; }
+
+  .reading-list__header h2 {
+    margin-top: 0px;
+    font-size: 1.3rem; }
+
+  body {
+    font-size: 12pt; }
+
+  h1 {
+    font-size: 1.75rem; } }
