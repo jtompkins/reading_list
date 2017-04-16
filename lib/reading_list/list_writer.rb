@@ -1,3 +1,5 @@
+require 'fileutils'
+
 module ReadingList
   class ListWriter
     def write(config, rendered_text)
