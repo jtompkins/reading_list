@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['josh@joshtompkins.com']
 
   spec.summary       = 'A simple static generator for reading lists.'
-  spec.homepage      = 'TODO: Put your gem\'s website or public repo URL here.'
+  spec.homepage      = 'https://github.com/jtompkins/reading_list'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
